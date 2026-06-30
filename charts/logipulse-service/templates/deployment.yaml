@@ -23,7 +23,7 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
             readonlyRootFilesystem: true
-          image: "{{ $repo }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
