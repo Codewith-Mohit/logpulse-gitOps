@@ -20,18 +20,6 @@ spec:
     spec:
       containers:
         - name: {{ .Release.Name }}
-          {{- $repo := .Values.image.repository -}}
-          {{- if eq .Release.Name "catalog-service" -}}
-          {{- $repo = "logipulse-catalog-service" -}}
-          {{- else if eq .Release.Name "order-api" -}}
-          {{- $repo = "logipulse-order-service" -}}
-          {{- else if eq .Release.Name "fleet-service" -}}
-          {{- $repo = "logipulse-fleet-service" -}}
-          {{- else if eq .Release.Name "notification-service" -}}
-          {{- $repo = "logipulse-notification-service" -}}
-          {{- else if eq .Release.Name "frontend-ui" -}}
-          {{- $repo = "logipulse-frontend-ui" -}}
-          {{- end }}
           securityContext:
             allowPrivilegeEscalation: false
             readonlyRootFilesystem: true
