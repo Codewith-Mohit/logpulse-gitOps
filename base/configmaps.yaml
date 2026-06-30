@@ -4,6 +4,6 @@ metadata:
   name: logipulse-config
   namespace: logipulse
 data:
-  RABBITMQ_HOST: "rabbitmq-service"
-  SQL_SERVER_HOST: "sqlserver-service"
+  AZURE_SERVICEBUS_HOST: "sb-logipulse-prod.servicebus.windows.net"
+  SQL_SERVER_HOST: "sqlserver-service.logipulse.svc.cluster.local"
   SQL_DB_NAME: "LogiPulseOrders"

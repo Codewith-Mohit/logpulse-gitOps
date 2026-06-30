@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: logipulse-catalog-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/Codewith-Mohit/logpulse-gitOps.git'
+    targetRevision: HEAD
+    path: charts/logipulse-service
+    helm:
+      parameters:
+        - name: image.repository
+          value: 'acrlogipulseinfra.azurecr.io/logipulse-catalogservice'
+        - name: image.tag
+          value: 'latest'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: logipulse
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

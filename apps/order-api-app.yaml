@@ -17,6 +17,8 @@ spec:
           value: 'latest'
         - name: env.useSql
           value: 'true'
+        - name: env.useAzureServiceBus
+          value: 'true' # Activates our Azure Messaging context switch!
   destination:
     server: 'https://kubernetes.default.svc' # Points to the local cluster it lives on
     namespace: logipulse                     # Deploys app to your isolated sandbox namespace
