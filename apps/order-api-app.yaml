@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: logipulse-order-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/Codewith-Mohit/logpulse-gitOps.git'
+    targetRevision: HEAD
+    path: charts/logipulse-service
+    helm:
+      parameters:
+        - name: image.repository
+          value: 'acrlogipulseinfra.azurecr.io/logipulse-orderapi' # Your Azure Registry URL
+        - name: image.tag
+          value: 'latest'
+        - name: env.useSql
+          value: 'true'
+  destination:
+    server: 'https://kubernetes.default.svc' # Points to the local cluster it lives on
+    namespace: logipulse                     # Deploys app to your isolated sandbox namespace
+  syncPolicy:
+    automated:
+      prune: true     # Automatically deletes resources if you remove them from Git
+      selfHeal: true  # Overwrites manual cluster changes if they deviate from Git

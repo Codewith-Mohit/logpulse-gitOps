@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: logipulse-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+env:
+  useSql: true
+  sqlConnectionString: "Server=sqlserver-service.logipulse.svc.cluster.local,1433;Database=LogiPulseOrders;User Id=sa;Password=YourStrong@Password123;TrustServerCertificate=True;"
