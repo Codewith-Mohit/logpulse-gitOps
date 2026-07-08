@@ -12,7 +12,7 @@ spec:
     helm:
       parameters:
         - name: image.repository
-          value: 'acrlogipulseinfra.azurecr.io/logipulse-fleetservice'
+          value: 'acrlogipulseinfra.azurecr.io/logipulse-fleet-service'
         - name: image.tag
           value: 'latest'
   destination:

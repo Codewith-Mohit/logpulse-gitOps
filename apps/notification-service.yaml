@@ -12,7 +12,7 @@ spec:
     helm:
       parameters:
         - name: image.repository
-          value: 'acrlogipulseinfra.azurecr.io/logipulse-notification'
+          value: 'acrlogipulseinfra.azurecr.io/logipulse-notification-service'
         - name: image.tag
           value: 'latest'
   destination:

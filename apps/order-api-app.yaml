@@ -12,7 +12,7 @@ spec:
     helm:
       parameters:
         - name: image.repository
-          value: 'acrlogipulseinfra.azurecr.io/logipulse-orderapi' # Your Azure Registry URL
+          value: 'acrlogipulseinfra.azurecr.io/logipulse-order-api' # Your Azure Registry URL
         - name: image.tag
           value: 'latest'
         - name: env.useSql
