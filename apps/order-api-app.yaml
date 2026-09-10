@@ -12,7 +12,7 @@ spec:
     helm:
       parameters:
         - name: image.repository
-          value: 'acrlogipulseinfra.azurecr.io/logipulse-order-api' # Your Azure Registry URL
+          value: 'acrlogipulseinfra.azurecr.io/logipulse-order-api' # Azure Registry URL
         - name: image.tag
           value: 'latest'
         - name: env.useSql
@@ -24,5 +24,5 @@ spec:
     namespace: logipulse                     # Deploys app to your isolated sandbox namespace
   syncPolicy:
     automated:
-      prune: true     # Automatically deletes resources if you remove them from Git
-      selfHeal: true  # Overwrites manual cluster changes if they deviate from Git
+      prune: true     # Automatically deletes resources if someone remove them from Git
+      selfHeal: true  # Overwrites manual cluster changes if deviate from Git
